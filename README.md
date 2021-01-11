@@ -32,6 +32,6 @@
 <img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/editSimulation.png" width="auto" height="auto">
 
 ## Wynik symulacji
-<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/solveSimulation.png" width="auto" height="auto">
+<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/simulationSolve.png" width="auto" height="auto">
 
 
