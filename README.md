@@ -26,12 +26,12 @@
 <img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/addSimulation.png" width="800px" height="auto">
 
 ## Szczegóły symulacji
-<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/detailsSimulation.png" width="800px" height="auto">
+<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/detailsSimulation.png" width="auto" height="auto">
 
 ## Edycja symulacji
-<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/editSimulation.png" width="800px" height="auto">
+<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/editSimulation.png" width="auto" height="auto">
 
 ## Wynik symulacji
-<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/solveSimulation.png" width="800px" height="auto">
+<img src="https://github.com/grzesiek91w/simulation-pandemic-app/blob/master/src/img/solveSimulation.png" width="auto" height="auto">
 
 
