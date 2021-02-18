@@ -19,7 +19,7 @@ public class Simulation implements Serializable {
 
     
    // @Basic(optional = false)
-    private String N; // nazwasymulacji
+    private String N; // nazwa symulacji
 
     
     private Long P; //wielkość
@@ -252,26 +252,5 @@ public class Simulation implements Serializable {
 		return "Simulation [id=" + id + ", N=" + N + ", P=" + P + ", I=" + I + ", R=" + R + ", M=" + M + ", Ti=" + Ti
 				+ ", Tm=" + Tm + ", Ts=" + Ts + ", populationSimulation=" + populationSimulation + "]";
 	}
-
-
-
-
-	
-
-
-
-	
-
-
-
-
-	
-
-	
-
-	
-
-	
-    
-    
+       
 }
