@@ -20,11 +20,11 @@ import java.util.Set;
 @Transactional
 public class SimulationServiceImpl implements SimulationService {
 	
-	@Autowired
+    @Autowired
     private SimulationRepository simulationRepository;
 	
-	@Autowired
-	private PopulationSimulationRepository populationSimulationRepository;
+    @Autowired
+    private PopulationSimulationRepository populationSimulationRepository;
 
     public SimulationServiceImpl(SimulationRepository simulationRepository) {
         this.simulationRepository = simulationRepository;
@@ -44,28 +44,25 @@ public class SimulationServiceImpl implements SimulationService {
 		infectIncPerDay = new long[simulation.getTs()];
     	
     	
-      //  order.setDateCreated(LocalDate.now());
-    	//List<PopulationSimulation> populations = new ArrayList<>();
-    	//solve(simulation, populations);
+
     	runSimulation(simulation,simDays,infectIncPerDay);
     	List<PopulationSimulation> populations=new ArrayList<PopulationSimulation>(Arrays.asList(simDays));
     	for (PopulationSimulation populationSimulation : populations) {
     		System.out.println(populationSimulation);
 			
 		}
-    	//populations.addAll(simDays);
+    	
     	simulation.setPopulationSimulation(populations);
     	Simulation sim=simulationRepository.save(simulation);
-    	//populationSimulationRepository.saveAll(populations);
+    	
         return sim;
     }
     
     
-	public void runSimulation(Simulation simulation,PopulationSimulation []simDays, final long []infectIncPerDay)
-	{
-		long pi, pv, pm, pr;
+	public void runSimulation(Simulation simulation,PopulationSimulation []simDays, final long []infectIncPerDay){
 		
-		int day=simulation.getTs();
+	long pi, pv, pm, pr;
+	int day=simulation.getTs();
     	
     	double R=simulation.getR();
     	
@@ -137,80 +134,6 @@ public class SimulationServiceImpl implements SimulationService {
         }
 	}
     
-   
-
-    
-    /*
-	private void solve(Simulation simulation,  List<PopulationSimulation> populations) {
-		// TODO Auto-generated method stub
-    	
-    	PopulationSimulation populationSimulation = new PopulationSimulation();
-    	//List<PopulationSimulation> populations = new ArrayList<>();
-    	
-    	int Pi= simulation.getI();
-    	int Pv=(int)(simulation.getP()-Pi);
-    	int Pm=0;
-    	int Pr=0;
-    	
-    	int day=simulation.getTs();
-    	
-    	double R=simulation.getR();
-    	
-    	long P=simulation.getP();
-    	
-    	double M=simulation.getM();
-    	int Ti=simulation.getTi(); // ilosc dni od zarazenia do wyzdro
-    	int Tm= simulation.getTm();// ilosc dni od zarazenia do smierc
-    	
-    	int[]tab=new int[(int) day];
-    	int[]tab2=new int[(int)day];
-    	tab[0]=(int) Pi;
-    	tab2[0]=0;
-    	
-    	int mDied=0;
-    	
-    	populationSimulation.setPi(Pi);
-    	populationSimulation.setPv(Pv);
-    	populationSimulation.setPm(Pm);
-    	populationSimulation.setPr(Pr);
-    	populationSimulation.setDaySimulation(1);
-    	populationSimulation.setSimulation(simulation);
-    	
-    	populations.add(populationSimulation);
-    	//populationSimulationRepository.save(populationSimulation);
-    	
-    	for(int i=1; i<=day;i++) {
-    		Pi=(int) (Pi+Pi*R);
-    		//Pm+=Pm;
-    		//Pr+=Pr;
-    		//Pv+=Pv;
-    		
-    		if(i>Tm) {
-    		mDied= (int) (tab[(i-Tm)]*M);
-    		tab[(i-Tm)]=(int) (tab[i-Tm]-mDied);
-    		Pm=mDied;
-    		}
-    		if(i>Ti) {
-    		Pr=tab[i-Ti];
-    		Pv=(int) (P-(Pi+Pr+Pm));
-    		}
-    		
-    		PopulationSimulation populationSim = new PopulationSimulation(Pi,Pv,Pm,Pr,i,simulation);
-    		//populations.add(new PopulationSimulation(3L,Pi,Pv,Pm,Pr,(long)(i),simulation));	
-    		populations.add(populationSim);
-    		//populationSimulationRepository.saveAll(populations);
-    		
-    		//populationSimulationRepository.save(populationSim);
-    	}
-    	
-    	for (PopulationSimulation p : populations) {
-    		System.out.println(p);
-			
-		}
-    	
-		//populations.clear();
-	}
-*/
 	@Override
     public Simulation  getSimulation(long id) {
         return simulationRepository
